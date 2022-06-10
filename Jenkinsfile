@@ -6,7 +6,7 @@ pipeline {
   
 	environment{
 	registry="maheshparde/java-hello-world"
-	registryCredential='dockerhub'
+	registryCredential='maheshparde'
 	dockerImage=''
 	}
 	
@@ -36,7 +36,7 @@ stage('Registring image') {
 			script{
 				docker.withRegistry('',registryCredential){
 				dockerImage.push()
-				//sh "docker push maheshparde/java-hello-world"
+				sh "docker push maheshparde/java-hello-world"
 				}
 			}
 		}
