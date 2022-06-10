@@ -36,7 +36,7 @@ stage('Registring image') {
 			script{
 				docker.withRegistry('',registryCredential){
 				dockerImage.push()
-				sh "docker push maheshparde/java-hello-world"
+				sh "docker push maheshparde/java-hello-world.jar"
 				}
 			}
 		}
