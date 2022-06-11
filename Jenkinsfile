@@ -7,7 +7,7 @@ pipeline {
 	environment{
 	registry="maheshparde/java-hello-world"
 	registryCredential='maheshparde'
-	dockerImage=''
+	//dockerImage=''
 	}
 	
     //each branch has 1 job running at a time
@@ -35,7 +35,7 @@ stage('Registring image') {
 		steps{
 			script{
 				docker.withRegistry('',registryCredential){
-				dockerImage.push()
+				//dockerImage.push()
 				sh "docker push maheshparde/java-hello-world"
 				}
 			}
