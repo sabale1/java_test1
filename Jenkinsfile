@@ -22,6 +22,16 @@ pipeline {
 		}	
 	}
    
+   stage('Code Coverage') {
+        steps{
+          	script {
+                	git 'https://github.com/MaheshParde/JAVA-Test.git',
+                 	echo 'Code Coverage'
+                 	jacoco()
+                    }
+                     	
+            }
+    }
 
 	stage('docker Image'){
 		steps{
