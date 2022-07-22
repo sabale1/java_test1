@@ -5,8 +5,8 @@ pipeline {
   }
   
 	environment{
-	registry="https://github.com/sabale1/java_test1.git"
-	registryCredential='githubkey'
+	registry="prasabale/java_project"
+	registryCredential='Docker_Access'
 	//dockerImage=''
 	}
 	
@@ -22,12 +22,12 @@ pipeline {
 		}	
 	}
    
-       stage('Code Coverage') {
-               steps{
-          	    script {
-                	    git 'https://github.com/sabale1/java_test1.git',
-                	    echo 'Code Coverage'
-                	    jacoco()
+   stage('Code Coverage') {
+        steps{
+          	script {
+                	git 'https://github.com/sabale1/java_test1.git',
+                 	echo 'Code Coverage'
+                 	jacoco()
                     }
                      	
             }
@@ -41,7 +41,7 @@ pipeline {
 			}
 		}
 		
-        stage('Registring image') {
+stage('Registring image') {
 		steps{
 			script{
 				docker.withRegistry('',registryCredential){
@@ -56,4 +56,3 @@ pipeline {
   }
 	
 }
-   
