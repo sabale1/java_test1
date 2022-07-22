@@ -18,14 +18,14 @@ pipeline {
   stages{
 	stage('git') {
 		steps{
-		git 'https://github.com/sabale1/java_test1.git'
+		git 'git@github.com:sabale1/java_test1.git'
 		}	
 	}
    
    stage('Code Coverage') {
         steps{
           	script {
-                	git 'https://github.com/sabale1/java_test1.git',
+                	git 'git@github.com:sabale1/java_test1.git',
                  	echo 'Code Coverage'
                  	jacoco()
                     }
