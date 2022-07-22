@@ -5,8 +5,8 @@ pipeline {
   }
   
 	environment{
-	registry="maheshparde/java-hello-world"
-	registryCredential='maheshparde'
+	registry="https://github.com/sabale1/java_test1.git"
+	registryCredential='githubkey'
 	//dockerImage=''
 	}
 	
@@ -18,14 +18,14 @@ pipeline {
   stages{
 	stage('Git') {
 		steps{
-		git 'https://github.com/MaheshParde/JAVA-Test.git'
+		git 'https://github.com/sabale1/java_test1.git'
 		}	
 	}
    
    stage('Code Coverage') {
         steps{
           	script {
-                	git 'https://github.com/MaheshParde/JAVA-Test.git',
+                	git 'https://github.com/sabale1/java_test1.git',
                  	echo 'Code Coverage'
                  	jacoco()
                     }
@@ -36,7 +36,7 @@ pipeline {
 	stage('docker Image'){
 		steps{
 			script{
-		 	sh "docker build -t maheshparde/java-hello-world ."	
+		 	sh "docker build -t prasabale/java_project ."	
 			}
 			}
 		}
@@ -46,7 +46,7 @@ stage('Registring image') {
 			script{
 				docker.withRegistry('',registryCredential){
 				//dockerImage.push()
-				sh "docker push maheshparde/java-hello-world"
+				sh "docker push prasabale/java_project"
 				}
 			}
 		}
