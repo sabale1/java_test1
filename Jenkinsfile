@@ -16,7 +16,7 @@ pipeline {
   }
 
   stages{
-	stage('Git') {
+	stage('git') {
 		steps{
 		git 'https://github.com/sabale1/java_test1.git'
 		}	
