@@ -42,9 +42,9 @@ pipeline {
 			}
 		}
 		
-stage('Registring image') {
+       stage('Registring image') {
 		steps{
-			script{
+		        script{
 				docker.withRegistry('',registryCredential){
 				//dockerImage.push()
 				sh "docker push prasabale/java_project"
