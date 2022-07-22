@@ -41,7 +41,7 @@ pipeline {
 			}
 		}
 		
-stage('Registring image') {
+        stage('Registring image') {
 		steps{
 			script{
 				docker.withRegistry('',registryCredential){
