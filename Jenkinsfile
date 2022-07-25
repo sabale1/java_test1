@@ -27,8 +27,10 @@ pipeline {
                 steps{
           	        script {
                 	git 'https://github.com/sabale1/java_test1.git',
+			brabch :'master'
+			credentialsId:'githubkey'
                  	echo 'Code Coverage'
-                 	Jacoco()
+                 	jacoco()
                     }
                      	
             }
