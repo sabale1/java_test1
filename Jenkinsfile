@@ -25,7 +25,7 @@ pipeline {
    
        stage('Code Coverage') {
                 steps{
-          	        script {
+          	      script {
                 	git 'https://github.com/sabale1/java_test1.git',
 			brabch :'master'
 			credentialsId:'githubkey'
