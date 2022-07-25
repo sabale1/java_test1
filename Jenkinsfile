@@ -28,15 +28,15 @@ pipeline {
           	        script {
                 	git 'https://github.com/sabale1/java_test1.git',
                  	echo 'Code Coverage'
-                 	JaCoCo()
+                 	Jacoco()
                     }
                      	
             }
     }
 
-	stage('docker Image'){
+	stage('docker Image') {
 		steps{
-			script{
+			script {
 		 	sh "docker build -t prasabale/java_project ."	
 			}
 			}
