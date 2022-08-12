@@ -39,7 +39,7 @@ pipeline {
 	stage('docker Image') {
 		steps{
 		      script {
-		 	 sh 'docker build -t prasabale/java_project'	
+		 	 sh 'docker build -t prasabale/java_project .'	
 		      }
 	     }
      }
