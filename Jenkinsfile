@@ -38,11 +38,11 @@ pipeline {
 
 	stage('docker Image') {
 		steps{
-			script {
-		 	sh 'docker build -t prasabale/java_project .'	
-			}
-			}
-		}
+		      script {
+		 	 sh 'docker build -t prasabale/java_project'	
+		      }
+	     }
+     }
 		
        stage('Registring image') {
 		steps{
